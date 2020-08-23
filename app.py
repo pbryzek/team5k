@@ -5,8 +5,6 @@ from flask import jsonify
 from os import listdir
 from os.path import isfile, join
 
-from app.main import app 
-
 meta = MetaData()
 
 postgres_db = {}
