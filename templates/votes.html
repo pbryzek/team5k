@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="static/js/votes.js"></script>
+
+    <link rel="stylesheet" href="/static/css/styles.css">
+
+    <title>UCBE: Team 5k Final Project</title>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>Biden || Trump?</h1>
+        <h2>Which Presidential Candidate will win the Swing States in 2020?</h2>
+            <p>Can we predict the number of votes obtained based on the amount of donations raised in that county?
+            </p>
+    </div>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Team5k</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="/">Models</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Votes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <form>
+            <div class="form-group col-md-4">
+                <select id="mlType" class="form-control">
+                    {% for state in states %}
+                    <option>{{state}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <a href="#" id="submitBtn"> <button class="btn btn-default">Submit</button></a>
+        </form>
+    </div>
+
+    <div id="states_summary">
+        <div class="row">
+            <h2><span class="">Predicted 2020 State Results</span></h2>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <h3><span class="">Red States</span></h3>
+                <h4><span id="red_states" class=""></span></h4>
+            </div>
+            <div class="col-md-2">
+                <h3><span class="">Blue States</span></h3>
+                <h4><span id="blue_states" class=""></span></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <h3><span class="">Red Electoral Votes</span></h3>
+                <h4><span id="red_elec_votes" class=""></span></h4>
+            </div>
+            <div class="col-md-2">
+                <h3><span class="">Blue Electoral Votes</span></h3>
+                <h4><span id="blue_elec_votes" class=""></span></h4>
+            </div>
+        </div>
+    </div>
+    <div id="votes_summary">
+        <div class="row">
+            <h3><span class="">2016 Total Votes</span></h3>
+            <h4><span id="total_votes" class=""></span></h4>
+            <h2>Predicted Values:</h2>
+        </div>
+        <div class="row" style="display: none">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-2">
+                <h3><span class="">Blue:</span></h3>
+                <h4><span id="total_blue" class=""></span></h4>
+            </div>
+            <div class="col-md-2">
+                <h3><span class="">Red:</span></h3>
+                <h4><span id="total_red" class=""></span></h4>
+            </div>
+            <div class="col-md-2">
+                <h3><span class="">Other:</span></h3>
+                <h4><span id="total_other" class=""></span></h4>
+            </div>
+            <div class="col-md-2">
+                <h3><span class="">Winner:</span></h3>
+                <h4><span id="predicted_winner" class=""></span></h4>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-2">
+                <h3><span class="">Blue Total</span></h3>
+                <h4><span id="total_blue_2016" class=""></span></h4>
+            </div>
+            <div class="col-md-2">
+                <h3><span class="">Red Total</span></h3>
+                <h4><span id="total_red_2016" class=""></span></h4>
+            </div>
+            <div class="col-md-2">
+                <h3><span class="">Other Total</span></h3>
+                <h4><span id="total_other_2016" class=""></span></h4>
+            </div>
+            <div class="col-md-2">
+                <h3><span class="">Winner Votes</span></h3>
+                <h4><span id="predicted_winner_2016" class=""></span></h4>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 table-responsive" id="votes_table_div">
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
