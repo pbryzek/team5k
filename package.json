@@ -1,0 +1,23 @@
+{
+  "name": "team5k",
+  "version": "1.0.0",
+  "description": "Predicting who will win the Swing States based on donations",
+  "main": "app.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbryzek/team5k.git"
+  },
+  "keywords": [
+    "python",
+    "flask"
+  ],
+  "author": "Paul Bryzek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pbryzek/team5k/issues"
+  },
+  "homepage": "https://github.com/pbryzek/team5k#readme"
+}
