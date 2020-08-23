@@ -5,6 +5,8 @@ from flask import jsonify
 from os import listdir
 from os.path import isfile, join
 
+from app.main import app 
+
 meta = MetaData()
 
 postgres_db = {}
@@ -373,3 +375,6 @@ def query_table_sql(table_name, params_str):
         filepaths.append(filepath)
 
     return stats
+
+if __name__ == "__main__": 
+    app.run() 
