@@ -46,7 +46,7 @@ SWING_STATES = ["Summary", "AZ", "MI", "FL", "NC", "PA", "WI"]
 
 @app.route("/")
 def home():
-    ml_types = ['', ML_TYPE_LR, ML_TYPE_RF, ML_TYPE_DT, ML_TYPE_US, ML_TYPE_STATS_COUNTIES, ML_TYPE_STATS_DONATIONS, ML_TYPE_STATS_VOTES]
+    ml_types = ['', ML_TYPE_LR, ML_TYPE_RF, ML_TYPE_DT]
     return render_template(
         "index.html",
         ml_types=ml_types
@@ -373,6 +373,3 @@ def query_table_sql(table_name, params_str):
         filepaths.append(filepath)
 
     return stats
-
-if __name__ == "__main__": 
-    app.run() 
