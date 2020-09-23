@@ -8,6 +8,11 @@ var STATE_ELECTORAL_VOTES = {
     "MI": 16
 };
 
+const LIGHT_BLUE_HEX = "#3c3b6e";
+const LIGHT_RED_HEX = "#B32134";
+
+var rowIdx = 0;
+
 function append_span(results_div, span_id, str){
     $('<span />').html(str).appendTo(results_div);
 }
@@ -68,10 +73,6 @@ function build_td(val){
     return td_str;
 }
 
-const LIGHT_BLUE_HEX = "#ADD8E6";
-const LIGHT_RED_HEX = "#FFCCCB";
-
-var rowIdx = 0;
 function add_row_to_table(county, predict_blue_votes, predict_red_votes, predict_other_votes, predict_blue_votes_percent, predict_red_votes_percent, predict_other_votes_percent, total_votes_2016, predict_blue_total_votes, predict_red_total_votes, predict_other_total_votes) {
     let color_str = "";
     if (predict_blue_votes > predict_red_votes) {
